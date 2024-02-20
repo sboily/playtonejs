@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test de tonalité de retour d'appel</title>
+</head>
+<body>
+    <h2>Test de tonalité de retour d'appel</h2>
+    <label for="countrySelect">Sélectionnez un pays :</label>
+    <select id="countrySelect">
+        <option value="440/1500,0/3500">France (440Hz, 1500ms on, 3500ms off)</option>
+        <option value="425/1000,0/4000">Allemagne (425Hz, 1000ms on, 4000ms off)</option>
+        <option value="400/200,0/200,400/2000">Royaume-Uni (400Hz, 400ms on, 200ms off, 400ms on, 2000ms off)</option>
+        <option value="440+480/2000,0/4000">États-Unis (440Hz + 480Hz, 2000ms on, 4000ms off)</option>
+    </select>
+    <button onclick="playSelectedTone()">Jouer la tonalité sélectionnée</button>
+
+    <script src="index.js"></script>
+    <script>
+        function playSelectedTone() {
+            const selectedTone = document.getElementById('countrySelect').value;
+            playTone(selectedTone);
+        }
+    </script>
+</body>
+</html>
